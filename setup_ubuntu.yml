@@ -1,0 +1,42 @@
+# ansible-playbook -i localhost, -c local setup_ubuntu.yml
+---
+- name: Install Packages on Ubuntu
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Upgrade all packages
+      apt:
+        upgrade: dist
+
+    - name: Install required packages
+      apt:
+        name: "{{ packages }}"
+        state: present
+
+    - name: Upgrade all packages (again)
+      apt:
+        upgrade: dist
+
+  vars:
+    packages:
+      - vim
+      - tree
+      - neofetch
+      - docker-ce
+      - wine
+      - mysql-server
+      - postgresql
+      - nodejs
+      - git
+      - net-tools
+      - adb
+      # - android-studio
+      - code
+      - man-db
+      - npm
+      - openssh-server
