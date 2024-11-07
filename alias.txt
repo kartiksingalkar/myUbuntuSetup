@@ -1,0 +1,15 @@
+#Custom
+alias c='clear'
+alias e='exit'
+alias update='sudo apt update'
+alias upgrade='sudo apt upgrade -y'
+alias v='vim'
+alias myip="hostname -I"
+alias editbash="vim ~/.bashrc"
+alias reloadbash="source ~/.bashrc"
+alias search="grep -rnw ."
+alias path="echo $PATH"
+alias sysinfo='cat /proc/cpuinfo; lscpu; free -h; df -h'
+alias flushdns="sudo systemctl restart systemd-resolved"
+alias restart='sudo systemctl restart'
+
